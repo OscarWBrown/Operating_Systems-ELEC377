@@ -1,0 +1,28 @@
+SELFCOMP.c
+The doTest method in SELFCOMP.c writes the 'compromise' array to a buffer. It includes NOP instructions for padding to ensure proper alignment of the return address. 
+By overflowing the return address with the start address of the 'compromise' array, the program counter is redirected to execute the exploit code.
+When finding the size of compromise the core was dumped into core
+
+Length of string used in compromise1 for selfcomp.c: 160
+Length of string used in compromise for selfcomp.c: 159
+Subtracted more than the size of the exploit code (dissassembly found in exploit.lst) to land in the NOP instructions and execute exploit
+
+return address 0x007fffffffe018
+rsp from gdb   0x007fffffffe0a8
+
+CLIENT.c
+The main function in CLIENT.c sends an exploit string to the server using the gets function. 
+The server executes an exploit that includes the '/bin/env' command and sends the output back to the client. 
+The output of the quote server is then displayed on the terminal.
+When finding the size of compromise, the core was dumped into serverCore to keep it separate from selfcomp's core dump
+
+Length of string used in compromise1 for client.c: 224 + \n (226)
+Length of string used in compromise for client.c: 224
+
+return address 0x000A7fffffffdec0
+rsp from gdb   0x000A7fffffffdf88
+
+EXPLOIT (Assembly Equivalent)
+The exploit code, written in assembly, sets up registers for the execve system call. 
+This system call is used to run a new program. In this example, the '/bin/env' command is executed, and the exploit code ensures 
+that the program counter points to the NOP buffer. The exploit concludes by exiting the program.

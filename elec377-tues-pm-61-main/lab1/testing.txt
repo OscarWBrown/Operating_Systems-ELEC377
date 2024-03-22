@@ -1,0 +1,12 @@
+The lab was tested by checking numerous output cases. First, the output was checked from two separate netID users of the VM.
+First, the output for 20hgww is should in lab1.out1, and it can be seen that the UIDs are 1007. when checked from
+20owb (lab1.out3), the UIDs show as 1008. As the name would suggest, these are indeed unique identifiers.
+
+The output was then tested using a root terminal. Here the unique identified was 0, which is the correct UID for a root user
+by convention. 
+
+Lastly, the output was tested using a data dump command (dd) as opposed to cat. By generating output using dd instead of cat, we can see
+the name field of the PCB info was dd instead of cat.
+
+These above cases confirm that the contents of the /proc/lab1 file are being dynamically and correctly generated upon a request for the
+file

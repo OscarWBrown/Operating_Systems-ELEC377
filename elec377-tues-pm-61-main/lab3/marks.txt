@@ -1,0 +1,14 @@
+Documentation 3/3
+-good documentation
+
+Code Solution 2/3
+-numProdRunning is a shared variable, so changing it requires a lock
+
+Code Clarity 2/2
+-code is clear and legible
+
+Testing 2/2
+-tested all relevant cases
+
+
+Total 9/10

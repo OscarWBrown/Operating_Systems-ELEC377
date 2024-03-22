@@ -1,0 +1,39 @@
+Script started on 2023-10-16 18:04:43-04:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="134" LINES="12"]
+]0;20owb@elec377-tues-pm-61: ~/elec377-tues-pm-61/lab2[01;32m20owb@elec377-tues-pm-61[00m:[01;34m~/elec377-tues-pm-61/lab2[00m$ ./shell
+%> ls
+hello.c
+Makefile
+testing
+doInternalCommandTest.txt
+shell.c
+testtest1.txt
+shell
+hello
+%> pwd
+/home/20owb/elec377-tues-pm-61/lab2
+%> cd elec377-tues-pm-lp  61
+> ls
+lab3
+lab0
+lab1
+lab2
+%> cd lab2
+%> ls
+hello.c
+Makefile
+testing
+shell.c
+shell
+hello
+%> cd elec388-tues-pm-12345
+Error: couldn't change to target directory%> this should not work
+Error: File does NOT exist
+Error: File does NOT exist
+%> exit
+]0;20owb@elec377-tues-pm-61: ~/elec377-tues-pm-61/lab2[01;32m20owb@elec377-tues-pm-61[00m:[01;34m~/elec377-tues-pm-61/lab2[00m$ exit
+exit
+
+Script done on 2023-10-16 18:06:01-04:00 [COMMAND_EXIT_CODE="0"]
+
+
+As can be seen when 

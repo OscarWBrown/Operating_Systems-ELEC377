@@ -1,0 +1,44 @@
+test1_pssh.txt      using command ./ps.sh 
+test2_ps.txt        using command ps -eo pid,user
+
+In the first test we compare the output created by test1_pssh.txt using command 
+./ps.sh, and the ouput created by by test2_pspiduser.txt using command 
+ps -eo pid,user. 
+The results are slightly consistent, however this is to be expected and does note
+indicate incorrect functionality of the code. Some slight variations may arise 
+during the execution of our createdps.sh code compared to the original ps command. 
+These differences may be attributed to factors such as the timing disparity between 
+the two commands, variances in sorting rules and formatting, and the distinct 
+approaches in information retrieval. 
+Specifically, the ps command gathers process information from the kernel with 
+default filtering, while the ps.sh code reads data directly from the /proc 
+directory, applying its own filters. As a result, certain edge cases may exhibit 
+discrepancies. It's important to note that despite these minor discrepancies, the 
+overall test remains accurate, and similar variations persist in subsequent tests.
+
+test3_psshgouprsscomm.txt   using command ./ps.sh -group -rss -comm
+test4_psgrouprsscomm.txt    using command ps -eo group,user,comm
+
+In the second test we compare the output created by test3_psshgouprsscomm.txt 
+using command ./ps.sh -group -rss -comm, and the ouput created by by 
+test4_psgrouprsscomm.txt using command ps -eo group,user,comm.
+The content in each file exhibits near-perfect similarity, with only minor 
+variances in formatting. Notably, substantial distinctions arise in the RSS 
+attribute, as the occupied physical memory by the process is subject to variability.
+
+test5_psshcommand.txt       using command ./ps.sh -command
+test6_pscommand.txt         using command ps -eo command
+
+In the second test we compare the output created by test5_psshcommand.txt 
+using command ./ps.sh -command, and the ouput created by by 
+test6_pscommand.txt using command ps -eo command.
+This test includes the command attribute. The outputs vary in the command portion, 
+since the command will change depending on whether the process is invoked with a ps 
+or a ./ps.sh call.
+
+text7_psshcommcommand.txt   using command ./ps.sh -comm -command
+
+In the last test the output in text7_psshcommcommand.txt is the result of the 
+command ./ps.sh -comm -command. 
+This illistrates that the code correclty throws an error when both comm and 
+command are running simultaneously.

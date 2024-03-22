@@ -1,0 +1,44 @@
+Script started on 2023-10-16 17:57:04-04:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="134" LINES="12"]
+]0;20owb@elec377-tues-pm-61: ~/elec377-tues-pm-61/lab2[01;32m20owb@elec377-tues-pm-61[00m:[01;34m~/elec377-tues-pm-61/lab2[00m$ make
+cc -o shell -g shell.c
+[01m[Kshell.c:[m[K In function ‘[01m[KskipChar[m[K’:
+[01m[Kshell.c:140:18:[m[K [01;35m[Kwarning: [m[Kcomparison between pointer and integer
+  140 |         if (skip [01;35m[K==[m[K NULL) {
+      |                  [01;35m[K^~[m[K
+[01m[Kshell.c:[m[K In function ‘[01m[KdoProgram[m[K’:
+[01m[Kshell.c:230:7:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K-Wformat-security[m[K]
+  230 |       [01;35m[Ksprintf[m[K(cmd_path, path[currentDir]);
+      |       [01;35m[K^~~~~~~[m[K
+[01m[Kshell.c:232:7:[m[K [01;35m[Kwarning: [m[Kformat not a string literal and no format arguments [[01;35m[K-Wformat-security[m[K]
+  232 |       [01;35m[Ksprintf[m[K(cmd_path+strlen(cmd_path), args[0]);
+      |       [01;35m[K^~~~~~~[m[K
+]0;20owb@elec377-tues-pm-61: ~/elec377-tues-pm-61/lab2[01;32m20owb@elec377-tues-pm-61[00m:[01;34m~/elec377-tues-pm-61/lab2[00m$ ./shell
+%> hello  test 
+2
+0: hello
+1: test
+2: c3c7f4f0
+%>     hello test 
+2
+0: hello
+1: test
+2: c3c7f4f0
+%>   hello    test      
+2
+0: hello
+1: test
+2: c3c7f4f0
+%>   hello  this is a   test   again   
+2
+0: hello
+1: test
+3: is
+4: a
+5: test
+6: again
+7: c3c7f4f0
+%> exit
+]0;20owb@elec377-tues-pm-61: ~/elec377-tues-pm-61/lab2[01;32m20owb@elec377-tues-pm-61[00m:[01;34m~/elec377-tues-pm-61/lab2[00m$ exit
+exit
+
+Script done on 2023-10-16 17:57:38-04:00 [COMMAND_EXIT_CODE="0"]

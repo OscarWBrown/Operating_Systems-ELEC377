@@ -1,0 +1,13 @@
+Documentation 3/3:
+- good documentation!
+
+Code Solution 3/3:
+- code is correct
+
+Code Clarity 2/2:
+- code is clear and legible
+
+Testing 2/2:
+- good testing
+
+Total 10/10

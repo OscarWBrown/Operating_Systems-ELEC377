@@ -1,0 +1,21 @@
+This function is responsible for reading data from an input file (inFile) and producing data to be consumed by other threads.
+
+The consumer reads lines from the input file using fgets and converts the read string to an integer.
+It locks the mutex using pthread_mutex_lock to ensure exclusive access to shared resources.
+It checks if the buffer is full (controlled by numSlots and numElements) and if it is, it waits using pthread_cond_wait until the full condition variable is signaled. This is to avoid overfilling the buffer.
+Once there is space in the buffer, it adds the value to the buffer, updates the buffer's head pointer, and increments numElements to keep track of the number of elements in the buffer.
+It signals the empty condition variable to indicate that the buffer is no longer empty.
+It then releases the mutex lock to allow other threads to access the shared resources.
+After processing all lines in the input file, it decrements numProdRunning, and if it's the last producer, it broadcasts a signal on the empty condition variable to wake up any waiting consumers.
+
+The consumer function is responsible for consuming data from the buffer and writing it to an output file.
+It initializes some variables and opens the output file for writing.
+It then enters an infinite loop to keep consuming data as long as there are producers (controlled by numProdRunning) or data in the buffer.
+Inside the loop, it locks the mutex to ensure exclusive access to shared resources.
+Next, it checks if the buffer is empty and there are still producers running, and if so, it waits on the empty condition variable using pthread_cond_wait.
+If there are no more producers and the buffer is empty, it releases the mutex and breaks out of the loop.
+If there is data in the buffer, it reads a value from the buffer, updates the tail pointer, and decrements numElements.
+It signals the full condition variable to indicate that there is space in the buffer.
+It releases the mutex lock.
+It writes the consumed value to the output file.
+Once the loop ends, it closes the output file and prints a message indicating the consumer thread has exited.

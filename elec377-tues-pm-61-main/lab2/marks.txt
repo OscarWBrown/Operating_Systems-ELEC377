@@ -1,0 +1,18 @@
+Documentation 2.5/3.5:
+-while documentation is good on a high-level, you do not cover any details regarding which commandline functions you implemented, and how theyre designed
+-please give your documentation files a type (such as .txt, .md, etc.)
+
+Testing Docs 2/3.5:
+-splitCommandLine evidently does not behave as expected, the last element is c3c7f4f0
+-it's okay if your code doesn't work as expected, but saying it does work when it clearly doesnt is not acceptable
+-you never test external commands
+
+Code Correctness 1/1.5:
+-splitCommandLine does not behave as expected, you are missing a very easy step
+    -// add a null to end of array (Step 2)
+
+
+Code Clarity 1.5/1.5:
+-code is clear and legible1
+
+Total 7/10

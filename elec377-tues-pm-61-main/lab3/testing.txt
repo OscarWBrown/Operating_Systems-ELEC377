@@ -1,0 +1,4 @@
+This lab was tested for three different scenarios: many producers to many consumers, 1 producer to many consumers, and many producers
+ to 1 consumer. These are given by test 1, 2 and 3 respectively (not that the first number afer t or out denotes the test number). 
+As you can see, in all cases, the data read in from the producer is taken by the consumers and put into the out files. 
+You can tell this functions properly because the numbers from the input files remian in the correct order when looking in the output files.

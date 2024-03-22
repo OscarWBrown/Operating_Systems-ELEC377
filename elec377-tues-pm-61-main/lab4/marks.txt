@@ -1,0 +1,15 @@
+Documentation 1.5/3
+-add documentation to a separate file next time (no marks deducted)
+-elaborate more on how the script works, you are missing many details
+
+
+Code Solution 3/3
+-code behaves as expected
+
+Code Clarity 2/2
+-code is clear and legible
+
+Testing 2/2
+-all relevant cases tested
+
+Total 8.5/10

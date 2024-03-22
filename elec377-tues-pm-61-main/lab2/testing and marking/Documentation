@@ -1,0 +1,15 @@
+Problem:
+
+The lab's objective involved creating a basic shell program capable of executing fundamental operations and launching external programs.
+
+Resolution:
+
+To achieve this, the program initially receives the command buffer (the input string from the command line), identifies the start of each word, and stores a pointer to each word within the "args" array.
+A null terminator ('\0') is also added at the end of each word.
+The first element in the "args" array will always represent either the name of a function or a file.
+With this knowledge, we first compare the first word against the predefined functions.
+If a match is found, we execute the function and prepare for the next input.
+In cases where there is no match, we treat the first argument as a file name and attempt to open the file.
+If the file opens successfully, we proceed to execute it. Otherwise, we try to locate the file with a different path prefix.
+If we still cannot open the file successfully, it means the user input did not contain a valid command or file name.
+In such cases, we alert the user and prepare for another input.

@@ -1,0 +1,15 @@
+Documentation 2.5/3
+-elaborate on technical details of x86 assembly code
+-otherwise good documentation
+
+Code Solution 3/3
+-code is correct and works
+
+Code Clarity 2/2
+-code is clear and legible
+
+Testing 1.5/2
+-testing correct and obtained correct password
+-deducted half mark for brute-forcing password
+
+Total /10

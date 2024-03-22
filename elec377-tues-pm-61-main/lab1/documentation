@@ -1,0 +1,10 @@
+//Problem Statement
+
+/* This lab involved enhancing a Linux kernel by developing a loadable kernel module to extend its capabilities. This module was designed to access and manipulate data within a control block, with a specific focus on formatting process information into a file located in the /proc directory..*/
+
+//How the Parts of the Lab are Linked Together
+
+/* This lab created a dynamically loadable and unloadable kernel module which could be accessed in th /proc/ file system. The /proc/ directory is a dynamically laoded when a file is read from the directory i.e. in this case, reading the /proc/lab1 file will dynamically generate the contents in the file by executing the loaded kernel module. To generate this lab1 file in the proc directory, proc_create() is used to create the file and set permissions. Then there are numerous other methods such as proc_open to perform other tasks.*/
+
+//Contents of the Read Solution
+The read function is contained in the Lab1_show. The read solution uses the current macro to access information about the current process from the process control block. seq_printf statements were then used to print all the process control block information. Moreover, conditional if statements were used for the state fields in task_struct and depending on the field, one of three values is printed.
